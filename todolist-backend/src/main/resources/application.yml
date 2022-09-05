@@ -1,0 +1,17 @@
+# 데이터베이스, 로그레벨, 모니터링, 여러 오픈소스등 연결(세팅)해주는 파일임
+spring:
+  datasource :
+    url : jdbc:mysql://localhost:3306/todolist # 데이터베이스의 주소
+    username : hanalin
+    password : 1234
+    driver-class-name : com.mysql.cj.jdbc.Driver
+  jpa: # 자바 메소드로 데이터베이스를 다루게 해주는 거
+    hibernate:
+      ddl-auto: create #데이터스키마를 자동으로 생성해줌
+    database : mysql
+    database-platform : org.hibernate.dialect.MySQL5InnoDBDialect #jpa가 어떤 데이터베이스 sql문으로 번역을 해줄지 정의
+    properties:
+      hibernate:
+        show_sql : true #jpa가 실행될때 콘솔창을 보여줄 것인지
+        format_sql : true
+        use_sql_comments : true
